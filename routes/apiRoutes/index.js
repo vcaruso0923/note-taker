@@ -6,7 +6,6 @@ var uuid = require('uuid');
 router.post('/notes', (req, res) => {
     var noteData = req.body;
     noteData.id = uuid.v1();
-    console.log(noteData);
 
     fs.readFile('db/db.json', function (err, data) {
         var json = JSON.parse(data);
@@ -15,7 +14,7 @@ router.post('/notes', (req, res) => {
 
         fs.writeFile("db/db.json", JSON.stringify(json), function (err) {
             if (err) throw err;
-            console.log('The "data to append" was appended to file!');
+            console.log('The new note was appended to file!');
         });
     })
 
@@ -25,7 +24,6 @@ router.post('/notes', (req, res) => {
 router.get('/notes', (req, res) => {
     let results = fs.readFileSync(__dirname + "../../../db/db.json");
     let parsedNotes = JSON.parse(results);
-    console.log(parsedNotes);
     res.json(parsedNotes);
 });
 
