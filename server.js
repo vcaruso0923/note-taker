@@ -1,4 +1,4 @@
-// const apiRoutes = require('./routes/apiRoutes');
+const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
 const fs = require('fs');
 const path = require('path');
@@ -12,12 +12,12 @@ app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
 app.use(express.json());
 
-// connect api routes
-// app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
-
 //make files from public folder static resources
 app.use(express.static('public'));
+
+// connect api and html routes
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 //choose port
 const PORT = process.env.PORT || 3001;
