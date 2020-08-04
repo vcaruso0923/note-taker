@@ -1,7 +1,6 @@
 const { notes } = require('../../db/db.json');
 const router = require('express').Router();
 const fs = require("fs");
-const path = require("path");
 var uuid = require('uuid');
 
 router.post('/notes', (req, res) => {
