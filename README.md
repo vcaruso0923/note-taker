@@ -1,4 +1,6 @@
 # Note Taker   
+## Link
+https://polar-taiga-64482.herokuapp.com/
 ## Description
 
 A note-taking application
@@ -35,3 +37,6 @@ No tests right now
 ## Questions
 
 If you have any questions, please contact me via [email](vinnycar0923@gmail.com) or on [Github](http://github.com/vcaruso0923).
+
+## Screenshot
+![Note Taker](./demo.PNG)
